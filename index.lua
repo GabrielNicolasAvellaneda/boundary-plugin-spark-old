@@ -68,8 +68,6 @@ function HttpPlugin:onParseResponse(data)
 	return {}
 end
 
-
-
 local plugin = HttpPlugin:new(params)
 
 function get(key, map)
