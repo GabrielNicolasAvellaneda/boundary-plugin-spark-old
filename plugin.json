@@ -2,7 +2,11 @@
     "description": "A simple test plugin for the LUA framework",
     "icon" : "icon.png",
     "command": "boundary-meter index.lua",
-    "metrics" : ["BOUNDARY_LUA_SAMPLE"],
+    "metrics" : ["SPARK_MASTER_WORKERS_COUNT", "SPARK_MASTER_APPLICATIONS_RUNNING_COUNT", "SPARK_MASTER_APPLICATIONS_WAITING_COUNT", "SPARK_MASTER_JVM_MEMORY_USED",
+   				"SPARK_MASTER_JVM_MEMORY_COMMITTED", "SPARK_MASTER_JVM_HEAP_MEMORY_COMMITTED", "SPARK_MASTER_JVM_HEAP_MEMORY_USED", "SPARK_MASTER_JVM_HEAP_MEMORY_USAGE",
+   				"SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED", "SPARK_MASTER_JVM_NONHEAP_MEMORY_USED", "SPARK_MASTER_JVM_NONHEAP_MEMORY_USAGE"
+    
+    			],
     "postExtract" : "",
     "paramSchema": [
         {

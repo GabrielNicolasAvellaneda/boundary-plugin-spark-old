@@ -22,7 +22,7 @@ Tracks the following metrics for Spark.
 | SPARK_MASTER_APPLICATIONS_RUNNING_COUNT | Running application count on the master. |
 | SPARK_MASTER_APPLICATIONS_WAITING_COUNT | Waiting application count on the master. |
 | SPARK_MASTER_JVM_MEMORY_USED | Memory used by the JVM on the master. |
-| SPARK_MASTER_JVM_MEMORY_COMMITTED | Memory commited by the JVM on the master. |
+| SPARK_MASTER_JVM_MEMORY_COMMITTED | Memory committed by the JVM on the master. |
 | SPARK_MASTER_JVM_HEAP_MEMORY_USED | Heap memory used by the JVM on the master. |
 | SPARK_MASTER_JVM_HEAP_MEMORY_USAGE | Percentage of heap memory used by the JVM on the master. |
 | SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED | Non-heap memory committed by the JVM on the master. |
