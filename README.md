@@ -18,9 +18,19 @@ Tracks the following metrics for Spark.
 
 | Metric Name | Description |
 |:-----------:|:-----------:|
-| SPARK_WORKERS_COUNT | The number of active workers. |
-| SPARK_APPLICATIONS_ACTIVE_COUNT | The number of active applications. |
-| SPARK_APPLICATIONS_COMPLETED_COUNT | The number of completed applications. |
+| SPARK_MASTER_WORKERS_COUNT | The number of active workers on the master. |
+| SPARK_MASTER_APPLICATIONS_RUNNING_COUNT | Running application count on the master. |
+| SPARK_MASTER_APPLICATIONS_WAITING_COUNT | Waiting application count on the master. |
+| SPARK_MASTER_JVM_MEMORY_USED | Memory used by the JVM on the master. |
+| SPARK_MASTER_JVM_MEMORY_COMMITTED | Memory commited by the JVM on the master. |
+| SPARK_MASTER_JVM_HEAP_MEMORY_USED | Heap memory used by the JVM on the master. |
+| SPARK_MASTER_JVM_HEAP_MEMORY_USAGE | Percentage of heap memory used by the JVM on the master. |
+| SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED | Non-heap memory committed by the JVM on the master. |
+| SPARK_MASTER_JVM_NONHEAP_MEMORY_USED | Non-heap memory used by the JVM on the master. |
+| SPARK_MASTER_JVM_NONHEAP_MEMORY_USAGE | Percentage of non-heap memory usage by the JVM on the master. |
+
+
+
 | SPARK_JOBS_COUNT | The number of active jobs.|
 | SPARK_JOBS_FAILED_COUNT | The number of jobs that failed. |
 | SPARK_STAGES_COUNT | The number of active stages |
