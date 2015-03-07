@@ -16,19 +16,23 @@ You can also enable the *jvm source* for instance master, worker, driver and exe
 ### Metrics collected
 Tracks the following metrics for Spark.
 
-| Metric Name | Description |
-|:-----------:|:-----------:|
-| SPARK_MASTER_WORKERS_COUNT | The number of active workers on the master. |
-| SPARK_MASTER_APPLICATIONS_RUNNING_COUNT | Running application count on the master. |
-| SPARK_MASTER_APPLICATIONS_WAITING_COUNT | Waiting application count on the master. |
-| SPARK_MASTER_JVM_MEMORY_USED | Memory used by the JVM on the master. |
-| SPARK_MASTER_JVM_MEMORY_COMMITTED | Memory committed by the JVM on the master. |
-| SPARK_MASTER_JVM_HEAP_MEMORY_USED | Heap memory used by the JVM on the master. |
-| SPARK_MASTER_JVM_HEAP_MEMORY_USAGE | Percentage of heap memory used by the JVM on the master. |
-| SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED | Non-heap memory committed by the JVM on the master. |
-| SPARK_MASTER_JVM_NONHEAP_MEMORY_USED | Non-heap memory used by the JVM on the master. |
-| SPARK_MASTER_JVM_NONHEAP_MEMORY_USAGE | Percentage of non-heap memory usage by the JVM on the master. |
-
+| Metric Name | Description | Context |
+|:-----------:|:-----------:|:-------:|
+| SPARK_MASTER_WORKERS_COUNT | The number of active workers on the master. | Master |
+| SPARK_MASTER_APPLICATIONS_RUNNING_COUNT | Running application count on the master. | Master|
+| SPARK_MASTER_APPLICATIONS_WAITING_COUNT | Waiting application count on the master. | Master |
+| SPARK_MASTER_JVM_MEMORY_USED | Memory used by the JVM on the master. | Master |
+| SPARK_MASTER_JVM_MEMORY_COMMITTED | Memory committed by the JVM on the master. | Master |
+| SPARK_MASTER_JVM_HEAP_MEMORY_USED | Heap memory used by the JVM on the master. | Master |
+| SPARK_MASTER_JVM_HEAP_MEMORY_USAGE | Percentage of heap memory used by the JVM on the master. | Master |
+| SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED | Non-heap memory committed by the JVM on the master. | Master |
+| SPARK_MASTER_JVM_NONHEAP_MEMORY_USED | Non-heap memory used by the JVM on the master. | Master |
+| SPARK_MASTER_JVM_NONHEAP_MEMORY_USAGE | Percentage of non-heap memory usage by the JVM on the master. | Master
+| SPARK_APP_JOBS_ACTIVE | Jobs running on the application | App (i.e. Shell) |
+| SPARK_APP_JOBS_ALL | All jobs created by the application. | App |
+| SPARK_APP_STAGES_FAILED | Failed stages for the application. | App |
+| SPARK_APP_STAGES_RUNNING | Running stages for the application. | App |
+| SPARK_APP_STAGES_WAITING | Waiting stages for the application. | App |
 
 
 | SPARK_JOBS_COUNT | The number of active jobs.|
