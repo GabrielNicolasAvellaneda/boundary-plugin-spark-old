@@ -33,11 +33,3 @@ Tracks the following metrics for Spark.
 | SPARK_APP_STAGES_FAILED | Failed stages for the application. | App |
 | SPARK_APP_STAGES_RUNNING | Running stages for the application. | App |
 | SPARK_APP_STAGES_WAITING | Waiting stages for the application. | App |
-
-
-| SPARK_JOBS_COUNT | The number of active jobs.|
-| SPARK_JOBS_FAILED_COUNT | The number of jobs that failed. |
-| SPARK_STAGES_COUNT | The number of active stages |
-| SPARK_STAGES_FAILED | The number of stages that failed |
-| SPARK_MAX_TASK_TIME | The maximum duration of all the task ran.
-| SPARK_MAX_APPLICATION_TIME | The maximum duration of applications ran. |
