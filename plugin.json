@@ -4,33 +4,67 @@
     "command": "boundary-meter index.lua",
     "metrics" : ["SPARK_MASTER_WORKERS_COUNT", "SPARK_MASTER_APPLICATIONS_RUNNING_COUNT", "SPARK_MASTER_APPLICATIONS_WAITING_COUNT", "SPARK_MASTER_JVM_MEMORY_USED",
    				"SPARK_MASTER_JVM_MEMORY_COMMITTED", "SPARK_MASTER_JVM_HEAP_MEMORY_COMMITTED", "SPARK_MASTER_JVM_HEAP_MEMORY_USED", "SPARK_MASTER_JVM_HEAP_MEMORY_USAGE",
-   				"SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED", "SPARK_MASTER_JVM_NONHEAP_MEMORY_USED", "SPARK_MASTER_JVM_NONHEAP_MEMORY_USAGE"
-    
-    			],
+   				"SPARK_MASTER_JVM_NONHEAP_MEMORY_COMMITTED", "SPARK_MASTER_JVM_NONHEAP_MEMORY_USED", "SPARK_MASTER_JVM_NONHEAP_MEMORY_USAGE",
+   				"SPARK_APP_JOBS_ACTIVE", "SPARK_APP_JOBS_ALL", "SPARK_APP_STAGES_FAILED", "SPARK_APP_STAGES_RUNNING", "SPARK_APP_STAGES_WAITING", "SPARK_APP_BLKMGR_DISK_SPACE_USED",
+   				"SPARK_APP_BLKMGR_MEMORY_USED", "SPARK_APP_BLKMGR_MEMORY_FREE", "SPARK_APP_JVM_MEMORY_COMMITTED", "SPARK_APP_JVM_MEMORY_USED", "SPARK_APP_JVM_HEAP_MEMORY_COMMITTED",
+   				"SPARK_APP_JVM_HEAP_MEMORY_USED", "SPARK_APP_JVM_HEAP_MEMORY_USAGE", "SPARK_APP_JVM_NOHEAP_MEMORY_COMMITTED", "SPARK_APP_JVM_NONHEAP_MEMORY_USED",
+   				"SPARK_APP_JVM_NONHEAP_MEMORY_USAGE"],
     "postExtract" : "",
     "paramSchema": [
         {
-            "title": "Min val",
-            "name": "minValue",
-            "description": "The minimum random value",
+            "title": "Master Host",
+            "name": "host",
+            "description": "Host of the Master WebUI",
             "type": "string",
-            "default": 1,
-            "required": false
+            "default": "localhost",
+            "required": true
         },
         {
-            "title": "Max val",
-            "name": "maxValue",
-            "description": "The maximum random value",
+            "title": "Master port",
+            "name": "port",
+            "description": "Port of the Master WebUI",
             "type": "string",
-            "default": 10,
-            "required": false
+            "default": 8080,
+            "required": true
+        },
+        {
+            "title": "Master path",
+            "name": "path",
+            "description": "Path of the metrics on the Master WebUI",
+            "type": "string",
+            "default": "/metrics/masters/json/",
+            "required": true
+        },
+        {
+            "title": "Application Host",
+            "name": "host",
+            "description": "Host of the Application WebUI",
+            "type": "string",
+            "default": "localhost",
+            "required": true
+        },
+        {
+            "title": "Application port",
+            "name": "port",
+            "description": "Port of the Application WebUI",
+            "type": "string",
+            "default": 4040,
+            "required": true
+        },
+        {
+            "title": "Application path",
+            "name": "path",
+            "description": "Path of the metrics on the Application WebUI",
+            "type": "string",
+            "default": "/metrics/json/",
+            "required": true
         },
         {
             "title": "Poll Time (sec)",
             "name": "pollInterval",
             "description": "The Poll Interval to call the command. Defaults 5 seconds",
             "type": "string",
-            "default": 5,
+            "default": 2,
             "required": false
         }
     ]

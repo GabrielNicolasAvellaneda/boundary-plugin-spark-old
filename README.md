@@ -13,6 +13,10 @@ See the conf/metrics.properties file on you Spark installation for more details.
 
 You can also enable the *jvm source* for instance master, worker, driver and executor to get detailed metrics of the JVM.
 
+The plugin get metrics from the master and a running application. So you need to configure the host and port for the WebUI of the master and application process.
+
+By default, the WebUI for the master runs on port 8080 and, for example, the WebUI for the shell application runs on 4040. These are the default values for this parameters. You can change them based on your configuration.
+
 ### Metrics collected
 Tracks the following metrics for Spark.
 
@@ -33,3 +37,14 @@ Tracks the following metrics for Spark.
 | SPARK_APP_STAGES_FAILED | Failed stages for the application. | App |
 | SPARK_APP_STAGES_RUNNING | Running stages for the application. | App |
 | SPARK_APP_STAGES_WAITING | Waiting stages for the application. | App |
+| SPARK_APP_BLKMGR_DISK_SPACE_USED | Block manager disk space used | App |
+| SPARK_APP_BLKMGR_MEMORY_USED | Block manager memory used | App |
+| SPARK_APP_BLKMGR_MEMORY_FREE | Block manager remaining memory | App |
+| SPARK_APP_JVM_MEMORY_COMMITTED | Memory committed by the JVM of the app | App |
+| SPARK_APP_JVM_MEMORY_USED | Memory used by the JVM of the app | App |
+| SPARK_APP_JVM_HEAP_MEMORY_COMMITTED | Heap memory committed by the JVM of the app | App |
+| SPARK_APP_JVM_HEAP_MEMORY_USED | Heap memory used by the JVM of the app | App |
+| SPARK_APP_JVM_HEAP_MEMORY_USAGE | Percentage of heap memory in use by the JVM of the app | App |
+| SPARK_APP_JVM_NOHEAP_MEMORY_COMMITTED | Non-heap memory committed by the JVM of the app | App |
+| SPARK_APP_JVM_NONHEAP_MEMORY_USED | Non-heap memory used by the JVM of the app | App |
+| SPARK_APP_JVM_NONHEAP_MEMORY_USAGE | Percentage of non-heap memory in use by the JVM of the app | App |

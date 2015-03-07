@@ -38,6 +38,7 @@ end
 
 function escape(str)
 	local s, c = string.gsub(str, '%.', '%%.')
+	s, c = string.gsub(s, '%-', '%%-')
 	return s
 end
 
@@ -106,6 +107,10 @@ getValue = partial(get, 'value')
 getFuzzyValue = compose(getFuzzy, getValue)
 getFuzzyNumber = compose(getFuzzyValue, tonumber)
 
+function megaBytesToBytes(mb)
+	return mb * 1024 * 1024
+end
+
 function pluginWebUI:onParseResponse(data)
 	local parsed = json.parse(data)
 	parsed = get('gauges', parsed)
@@ -115,7 +120,17 @@ function pluginWebUI:onParseResponse(data)
 	result['SPARK_APP_STAGES_FAILED'] = getFuzzyValue('stage.failedStages', parsed)
 	result['SPARK_APP_STAGES_RUNNING'] = getFuzzyValue('stage.runningStages', parsed)
 	result['SPARK_APP_STAGES_WAITING'] = getFuzzyValue('stage.waitingStages', parsed)
-
+	result['SPARK_APP_BLKMGR_DISK_SPACE_USED'] = megaBytesToBytes(getFuzzyNumber('BlockManager.disk.diskSpaceUsed_MB', parsed))
+	result['SPARK_APP_BLKMGR_MEMORY_USED'] = megaBytesToBytes(getFuzzyNumber('BlockManager.memory.memUsed_MB', parsed))
+	result['SPARK_APP_BLKMGR_MEMORY_FREE'] = megaBytesToBytes(getFuzzyNumber('BlockManager.memory.remainingMem_MB', parsed))
+	result['SPARK_APP_JVM_MEMORY_COMMITTED'] = getFuzzyNumber('jvm.total.committed', parsed)
+	result['SPARK_APP_JVM_MEMORY_USED'] = getFuzzyNumber('jvm.total.used', parsed)
+	result['SPARK_APP_JVM_HEAP_MEMORY_COMMITTED'] = getFuzzyNumber('jvm.heap.committed', parsed)
+	result['SPARK_APP_JVM_HEAP_MEMORY_USED'] = getFuzzyNumber('jvm.heap.used', parsed)
+	result['SPARK_APP_JVM_HEAP_MEMORY_USAGE'] = getFuzzyNumber('jvm.heap.usage', parsed)
+	result['SPARK_APP_JVM_NONHEAP_MEMORY_COMMITTED'] = getFuzzyNumber('jvm.non-heap.committed', parsed)
+	result['SPARK_APP_JVM_NONHEAP_MEMORY_USED'] = getFuzzyNumber('jvm.non-heap.used', parsed)
+	result['SPARK_APP_JVM_NONHEAP_MEMORY_USAGE'] = getFuzzyNumber('jvm.non-heap.usage', parsed)
 
 	return result
 end
